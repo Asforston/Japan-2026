@@ -1,343 +1,294 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Japan 2026 — 13-Day Itinerary</title>
-  <meta
-    name="description"
-    content="A 13-day Japan travel itinerary: Kyoto, Himeji, Hiroshima, Miyajima, Kanazawa, Nagano, Tokyo, Osaka. April 14-26, 2026."
-  />
-  <meta name="theme-color" content="#0f0f1a" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
+  <meta name="description" content="A 13-day Japan travel itinerary: Kyoto, Himeji, Hiroshima, Miyajima, Kanazawa, Nagano, Tokyo, Osaka. April 14-26, 2026.">
+  <meta name="theme-color" content="#0f0f1a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: #0f0f1a;
-      color: #e0e0e0;
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
+    body { background: #0f0f1a; color: #e0e0e0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
     #root { min-height: 100vh; }
   </style>
 </head>
 <body>
   <div id="root"></div>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-
   <script>
-    const { useState, createElement: h } = React;
+window.onerror = function(msg, url, line) {
+  document.getElementById('root').innerHTML = '<div style="color:red;padding:20px;">Error: ' + msg + ' (line ' + line + ')</div>';
+};
+try {
+const { useState, createElement: h } = React;
 
-    // IMPORTANT:
-    // Keep your existing `days` array, but convert ALL smart quotes to straight quotes.
-    // Example:
-    // date: "Apr 14 (Tue)" not date: “Apr 14 (Tue)”
-    const days = [
-      // paste your cleaned days array here
-    ];
+const days = [
+{
+date: “Apr 14 (Tue)”, day: 1, city: “KIX → Kyoto”, travel: true,
+theme: “Arrival Day: Land, Settle & First Taste”,
+schedule: [
+{ time: “9:00–9:45”, activity: “✈️ Land at Kansai International Airport”, detail: “Clear customs and immigration (~30-45 min). Pick up pocket WiFi or activate eSIM. Buy an ICOCA card at the JR ticket office in the airport (¥2,000 initial load) — you’ll use this every day for subways, buses, and konbini purchases.”, type: “transit” },
+{ time: “10:00–11:15”, activity: “🚆 Haruka Express → Kyoto”, detail: “Direct limited express from KIX to Kyoto Station (~75 min). Buy the ICOCA & Haruka discount ticket at the JR office (¥1,800 vs ¥3,640 full price — tourist-only discount, bring your passport). Sit back and decompress after the flight.”, type: “transit” },
+{ time: “11:30–12:00”, activity: “🏨 Check in / drop bags”, detail: “Keio Prelia Hotel Kyoto Karasuma-Gojo. Take Karasuma subway from Kyoto Station to Gojo Station (1 stop, ¥220). If check-in isn’t ready, leave bags with front desk.”, type: “explore” },
+{ time: “12:15–13:15”, activity: “🍜 Lunch: Men-ya Inoichi”, detail: “Welcome-to-Japan bowl. 10-seat ramen shop near Kawaramachi with incredible dashi-based ramen using Kyoto’s soft mineral water. Choose Shiro (white soy) or Kuro (dark soy). ~¥1,000. Perfect first meal.”, type: “food” },
+{ time: “13:30–15:30”, activity: “🏯 Kiyomizu-dera Temple”, detail: “Iconic hillside temple with the famous wooden stage jutting over the valley. Views across all of Kyoto. Walk up through charming Higashiyama streets — Sannen-zaka & Ninen-zaka (stone-paved lanes with traditional shops). ¥400 entry.”, type: “sight” },
+{ time: “15:30–16:30”, activity: “🏘️ Higashiyama District stroll”, detail: “Walk down from Kiyomizu through pottery shops, tea houses, and sweet shops. Grab matcha soft serve or yatsuhashi (cinnamon rice cake sweets). Old Kyoto atmosphere.”, type: “explore” },
+{ time: “16:30–17:30”, activity: “⛩️ Yasaka Shrine & Maruyama Park”, detail: “At the bottom of Higashiyama. Beautiful shrine grounds, free entry. Maruyama Park may still have late cherry blossoms in mid-April. Lovely spot to rest jet-lagged legs.”, type: “sight” },
+{ time: “18:00–19:30”, activity: “🍣 Dinner: Nishiki Market area”, detail: “Market stalls close by 5-6 PM, but surrounding restaurants stay open. Walk through what’s still open, then sit down for dinner nearby. Pontocho Alley is a 2-min walk — atmospheric restaurants lining the river. Try grilled seafood skewers and dashimaki tamago.”, type: “food” },
+{ time: “19:30–20:30”, activity: “🏮 Gion evening walk”, detail: “Quick twilight stroll through Gion — Hanamikoji-dori street, Kyoto’s famous geisha district. Spot maiko heading to engagements at dusk. Don’t push too late — jet lag is real. Early night is smart tonight.”, type: “explore” },
+],
+},
+{
+date: “Apr 15 (Wed)”, day: 2, city: “Kyoto”, travel: false,
+theme: “Sunrise Fushimi Inari → Gold, Bamboo & Zen”,
+schedule: [
+{ time: “5:15–5:30”, activity: “🚆 JR Nara Line → Inari Station”, detail: “Kyoto Station → Inari Station (5 min, ¥150). First trains run ~5:15 AM. The shrine is open 24/7 — no gates, no tickets. April sunrise is ~5:30 AM.”, type: “transit” },
+{ time: “5:30–7:30”, activity: “⛩️ Fushimi Inari Taisha (Sunrise)”, detail: “THE iconic shrine — thousands of vermillion torii gates up the mountainside. At this hour you’ll have the gates almost entirely to yourselves. Hike the full loop (~2 hrs) to the summit for panoramic views, or go halfway and back (~1 hr). The light filtering through the gates at dawn is otherworldly. No entry fee.”, type: “sight” },
+{ time: “7:30–8:30”, activity: “🍜 Breakfast: Honke Daiichi Asahi”, detail: “Walk back to Kyoto Station area (10 min from Inari). 70+ year old ramen shop, open from 5 AM. Rich pork broth with thin noodles — ramen for breakfast is a Kyoto tradition. You’ll be starving after the hike. ~¥800.”, type: “food” },
+{ time: “9:00–10:00”, activity: “⛩️ Kinkaku-ji (Golden Pavilion)”, detail: “The gold-leafed pavilion reflected in the mirror pond. Bus #205 or #101 from Kyoto Station area (~40 min). ¥500 entry. You’ll arrive right as it opens — perfect.”, type: “sight” },
+{ time: “10:30–11:30”, activity: “🪨 Ryoan-ji Temple”, detail: “Home to Japan’s most famous rock garden — 15 stones in raked white gravel. Peaceful moss garden behind. 15-min walk from Kinkaku-ji. ¥500.”, type: “sight” },
+{ time: “12:00–13:00”, activity: “🍜 Lunch: Tentenyu (Shijo-Karasuma)”, detail: “Excellent chicken-broth ramen. Silky paitan broth with handmade noodles. The Shijo-Karasuma branch is convenient on the way to Arashiyama.”, type: “food” },
+{ time: “13:30–15:30”, activity: “🎋 Arashiyama Bamboo Grove & area”, detail: “The towering bamboo forest. Walk through, then explore: Tenryu-ji Temple (¥500, UNESCO site), Togetsukyo Bridge, the monkey park (¥550, 20-min hike up for views + monkeys). Take JR Sagano Line from central Kyoto (~15 min).”, type: “sight” },
+{ time: “16:00–17:00”, activity: “🛍️ Arashiyama shopping street”, detail: “Kimono Forest (illuminated poles at the station), local crafts, matcha treats. Try yuba (tofu skin) specialties — it’s a Kyoto thing.”, type: “explore” },
+{ time: “17:30–18:30”, activity: “🏘️ Pontocho Alley stroll”, detail: “Narrow atmospheric alley along the Kamo River lined with restaurants and lanterns. Beautiful architecture and atmosphere — worth walking even without dining here. Great photo ops.”, type: “explore” },
+{ time: “19:00–20:30”, activity: “🍣 Dinner: Sushi or Kaiseki”, detail: “Splurge option: Nijo Kizuki for omakase sushi (~¥5,000-8,000). Budget option: conveyor belt sushi at Musashi Sushi near Sanjo Station. Both excellent. Early night — you’ve been up since 5 AM.”, type: “food” },
+],
+},
+{
+date: “Apr 16 (Thu)”, day: 3, city: “Kyoto / Nara”, travel: true,
+theme: “Nara Day Trip: Deer, Giant Buddha & Mochi”,
+schedule: [
+{ time: “8:00–8:45”, activity: “🚆 JR Miyakoji Rapid → Nara”, detail: “Kyoto Station → JR Nara Station (45 min, ¥730). Direct, no transfers.”, type: “transit” },
+{ time: “9:00–10:30”, activity: “🦌 Nara Park & Todai-ji Temple”, detail: “Walk from station through Nara Park (free-roaming deer everywhere — buy shika senbei crackers for ¥200 to feed them). Todai-ji houses the enormous Great Buddha (Daibutsu). Jaw-dropping scale. ¥600 entry.”, type: “sight” },
+{ time: “10:30–11:30”, activity: “⛩️ Kasuga Taisha Shrine”, detail: “Ancient shrine with thousands of stone and bronze lanterns lining the paths through the forest. Magical atmosphere. Walk through the primeval forest behind. ¥500 for inner sanctuary.”, type: “sight” },
+{ time: “11:30–12:00”, activity: “🌿 Kasuga Primeval Forest”, detail: “UNESCO World Heritage forest behind the shrine. Peaceful paths, ancient trees. A nice breather.”, type: “explore” },
+{ time: “12:00–13:00”, activity: “🍜 Lunch: Nakatanidou area”, detail: “Watch the famous mochi pounding performance at Nakatanidou (free to watch, mochi ¥150). Then grab lunch at Edogawa for unagi (eel) over rice, or TEN-TEN Café for a casual set meal.”, type: “food” },
+{ time: “13:30–14:30”, activity: “🛍️ Naramachi historic district”, detail: “Old merchant quarter with machiya townhouses converted to galleries, cafés, and shops. Charming narrow streets. Great for unique souvenirs.”, type: “explore” },
+{ time: “14:30–15:00”, activity: “🍡 Sweets break”, detail: “Stop at a kissaten (old-school café) for Japanese desserts — try warabi mochi, kakigori (shaved ice), or a cream soda float. Rest your feet.”, type: “food” },
+{ time: “15:15–16:00”, activity: “🚆 Return to Kyoto”, detail: “JR Miyakoji Rapid back to Kyoto Station (45 min, ¥730).”, type: “transit” },
+{ time: “16:30–17:30”, activity: “⛩️ Tofuku-ji Temple”, detail: “One of Kyoto’s great Zen temples with stunning moss-covered grounds and a famous bridge viewpoint. Less crowded than the big names. A short JR ride or walk from Kyoto Station. ¥500.”, type: “sight” },
+{ time: “18:00–19:00”, activity: “🏘️ Explore Kyoto Station area”, detail: “Kyoto Station itself is architecturally impressive. Walk up the grand stairway for views, browse the underground mall (Porta), or check out Kyoto Tower observation deck (¥900).”, type: “explore” },
+{ time: “19:30–21:00”, activity: “🍜 Dinner: Taiho Ramen”, detail: “Late-night legend in Nakagyo Ward. Mammoth bowls of shoyu ramen with sunflower-pattern chashu. Opens late, perfect for a hearty dinner. ~¥900.”, type: “food” },
+],
+},
+{
+date: “Apr 17 (Fri)”, day: 4, city: “Kyoto”, travel: false,
+theme: “Castles, Temples & Kimono Afternoon”,
+schedule: [
+{ time: “7:00–8:00”, activity: “🍳 Breakfast: Weekenders Coffee or hotel”, detail: “Grab coffee and a pastry at Weekenders Coffee near Karasuma-Gojo, or try a Japanese breakfast set at your hotel. Relaxed start before a temple-heavy day.”, type: “food” },
+{ time: “8:45–10:00”, activity: “🏯 Nijo Castle”, detail: “Shogun’s castle with famous ‘nightingale floors’ that chirp when you walk. Stunning painted screens inside. ¥800. Opens at 8:45 AM — arrive right at opening to beat tour groups. Central-west Kyoto, easy bus from hotel.”, type: “sight” },
+{ time: “10:30–11:30”, activity: “⛩️ Nanzen-ji Temple”, detail: “Head east. Massive Zen temple complex with the famous brick aqueduct (great photos). Walk through the towering Sanmon gate (¥600 to climb it for panoramic views). Free to wander the grounds. Bus or subway from Nijo area (~20 min).”, type: “sight” },
+{ time: “11:30–12:15”, activity: “🍣 Lunch: Near Nanzen-ji”, detail: “Grab a quick lunch before the walk. Omen Nanzen-ji for excellent udon (~¥1,200) or Hinode Udon for a cheaper option, both right near the temple. Eat now — you won’t have time for a sit-down meal between Ginkaku-ji and kimono.”, type: “food” },
+{ time: “12:15–13:00”, activity: “🌸 Philosopher’s Path”, detail: “Beautiful canal-side walking path lined with cherry trees connecting Nanzen-ji northward to Ginkaku-ji. ~2 km stroll. Cafés and small temples along the way.”, type: “explore” },
+{ time: “13:00–13:40”, activity: “⛩️ Ginkaku-ji (Silver Pavilion)”, detail: “Understated and beautiful — the sand garden representing waves is mesmerizing. Moss garden with woodland trail. ¥500. Don’t linger too long — you have a 2:15 kimono appointment to make.”, type: “sight” },
+{ time: “13:45–14:05”, activity: “🚕 Taxi to kimono shop”, detail: “Grab a taxi from the Ginkaku-ji area back to Shimogyo Ward (~15-20 min, ~¥1,500). Buses take 30+ min so taxi is the safe move. Head to Shiogamacho 353, Housei Bldg 1F.”, type: “transit” },
+{ time: “14:15–14:45”, activity: “👘 Kimono rental: get dressed (2:15 booking)”, detail: “Your booked appointment at Shiogamacho 353, Shimogyo Ward (Housei Bldg 1F). Allow 30 min to pick your kimono and get dressed. PRO TIP: Ask for zori sandals instead of geta — much more comfortable for the next 3 hours.”, type: “explore” },
+{ time: “15:10–15:25”, activity: “🚕 Taxi to Higashiyama”, detail: “Quick taxi from the kimono shop to the Higashiyama temple area (~15 min). Saves your feet for the good stuff.”, type: “transit” },
+{ time: “15:25–16:20”, activity: “⛩️ Kodai-ji Temple (in kimono)”, detail: “Beautiful Zen temple with stunning rock gardens, bamboo grove, and a gorgeous pond garden. Originally built in 1606 by the widow of Toyotomi Hideyoshi. The grounds are flat and manageable in kimono. ¥600 entry. Incredible photo backdrop.”, type: “sight” },
+{ time: “16:20–16:45”, activity: “📸 Entoku-in or nearby photo wandering”, detail: “Entoku-in is right next door to Kodai-ji — small sub-temple with a beautiful garden (¥500). Or just wander the Ninenzaka/Sannenzaka area nearby for photos. These lanes are stunning in kimono. Stick to the flat sections and take it slow.”, type: “explore” },
+{ time: “16:45–17:00”, activity: “🍡 Quick dessert stop”, detail: “Grab a sweet treat from Kasagi-ya (warabi mochi, ¥500) right near Kodai-ji, or pick up a yatsuhashi from one of the Higashiyama street vendors. Quick refuel before heading back.”, type: “food” },
+{ time: “17:00–17:15”, activity: “🚕 Head back to kimono shop”, detail: “Taxi or walk back to the Shimogyo shop. Taxi is ~10 min from Higashiyama. Walking is ~20 min along Shijo-dori (flat) — only if your feet are holding up.”, type: “transit” },
+{ time: “17:15–17:30”, activity: “👘 Return kimono”, detail: “Change back into your own clothes and shoes at the shop. Return everything by the 5:30 deadline. Sweet relief for your feet.”, type: “explore” },
+{ time: “17:30–18:45”, activity: “🛍️ Teramachi & Nishiki Market”, detail: “Free in your own shoes! Walk 5 min north to the covered shopping arcades. Browse Teramachi for souvenirs (fans, incense, ceramics), then duck into Nishiki Market for any stalls still open — dashimaki tamago, pickles, fresh seafood skewers.”, type: “explore” },
+{ time: “19:00–20:30”, activity: “🍖 Dinner: Pontocho Kiraku (7:00 PM)”, detail: “Shabu-shabu and sukiyaki at Restaurant Pontocho Shabushabu Sukiyaki Kiraku. Right on Pontocho Alley — one of Kyoto’s most atmospheric dining streets along the Kamo River. Walk north from Nishiki (~5 min). Arrive a few minutes early to soak in the alley.”, type: “food” },
+],
+},
+{
+date: “Apr 18 (Sat)”, day: 5, city: “Kyoto → Himeji → Hiroshima”, travel: true,
+theme: “Himeji Castle Stopover + Hiroshima”,
+schedule: [
+{ time: “7:30–8:00”, activity: “☕ Quick breakfast & checkout”, detail: “Grab onigiri and coffee from a konbini (7-Eleven or Lawson). Check out of hotel.”, type: “food” },
+{ time: “8:15–9:10”, activity: “🚆 Hikari Shinkansen → Himeji”, detail: “Kyoto Station → Himeji Station (~55 min on Hikari). Activate your 7-day JR Pass today! Use coin lockers at Himeji Station for your bags (¥400-700).”, type: “transit” },
+{ time: “9:15–11:15”, activity: “🏯 Himeji Castle”, detail: “Japan’s most spectacular original castle — UNESCO World Heritage, nicknamed ‘White Heron Castle.’ Survived WWII bombings intact. 15-min walk straight up the main boulevard from the station (you’ll see it the whole way). Explore the main keep, climb to the top for views. ¥1,050 entry. Allow ~1.5-2 hrs.”, type: “sight” },
+{ time: “11:30–12:15”, activity: “🚆 Hikari/Sakura Shinkansen → Hiroshima”, detail: “Himeji Station → Hiroshima Station (~55 min). Grab your bags from the locker and hop on the next westbound shinkansen. Covered by JR Pass.”, type: “transit” },
+{ time: “12:30–13:00”, activity: “🏨 Drop bags at hotel”, detail: “Sotetsu Fresa Inn is near Hiroshima Station. Drop bags and head out.”, type: “explore” },
+{ time: “13:00–14:00”, activity: “🥞 Lunch: Nagata-ya Okonomiyaki”, detail: “Right across from Peace Park. Hiroshima-style okonomiyaki — layered (not mixed like Osaka). Get the special with pork, egg, soba noodles. ~¥1,000. Expect a short wait.”, type: “food” },
+{ time: “14:00–16:00”, activity: “☮️ Hiroshima Peace Memorial Park”, detail: “Atomic Bomb Dome (exterior, free), Peace Memorial Museum (¥200 — deeply moving, allow 1-2 hrs), Children’s Peace Monument, Cenotaph. Emotional but essential.”, type: “sight” },
+{ time: “16:30–17:30”, activity: “🏯 Hiroshima Castle”, detail: “Reconstructed castle with museum inside about pre-war Hiroshima. Nice grounds. ¥370. 15-min walk north of Peace Park.”, type: “sight” },
+{ time: “17:30–19:00”, activity: “🦪 Dinner: Ekohiiki (oysters)”, detail: “Hiroshima produces 2/3 of Japan’s oysters. This spot near Peace Park serves them grilled, fried, smoked, and raw. Try the kaki fry set. Incredible quality and variety.”, type: “food” },
+{ time: “19:30–20:30”, activity: “🌃 Nagarekawa evening stroll”, detail: “Hiroshima’s main entertainment district. Walk the neon-lit streets, grab dessert — try a Hiroshima lemon cream puff or momiji manju (maple leaf cake) from a street vendor.”, type: “explore” },
+],
+},
+{
+date: “Apr 19 (Sun)”, day: 6, city: “Hiroshima”, travel: false,
+theme: “Miyajima Island Day”,
+schedule: [
+{ time: “8:00–9:00”, activity: “🚆 Train + Ferry → Miyajima Island”, detail: “JR San-yo Line from Hiroshima Station to Miyajimaguchi Station (27 min, covered by JR Pass). Then JR Ferry to Miyajima (10 min, also covered by JR Pass).”, type: “transit” },
+{ time: “9:15–10:30”, activity: “⛩️ Itsukushima Shrine & Floating Torii”, detail: “The iconic ‘floating’ torii gate in the sea — one of Japan’s most photographed sights. Check tide times: at high tide it appears to float, at low tide you can walk to it. Shrine entry ¥300.”, type: “sight” },
+{ time: “10:30–11:30”, activity: “🦌 Explore Miyajima town”, detail: “Deer roaming freely, charming shopping street (Omotesando). Try momiji manju (maple leaf cakes — the island’s signature sweet). Fresh grilled oysters from street vendors (~¥500 for 2).”, type: “explore” },
+{ time: “11:30–12:30”, activity: “🍣 Lunch: Grilled oysters & anago”, detail: “Try anago-meshi (conger eel over rice) — Miyajima’s signature dish. Fujitaya or Ueno are classic spots. Pair with grilled oysters. ~¥1,500-2,000.”, type: “food” },
+{ time: “13:00–15:00”, activity: “🏔️ Mt. Misen Hike or Ropeway”, detail: “Miyajima Ropeway to near the summit (¥1,840 round trip). Then 30-min hike to peak for panoramic Seto Inland Sea views. OR hike the full Momijidani trail up (~1.5 hrs).”, type: “sight” },
+{ time: “15:30–16:30”, activity: “⛩️ Daisho-in Temple”, detail: “Beautiful hillside temple at the base of Mt. Misen. Hundreds of small statues with knitted hats, prayer wheels, cave tunnel. Often overlooked — don’t skip it. Free.”, type: “sight” },
+{ time: “17:00–18:00”, activity: “🚢 Ferry + Train back to Hiroshima”, detail: “Return the same way. ~40 min total.”, type: “transit” },
+{ time: “18:30–20:00”, activity: “🥞 Dinner: Okonomimura”, detail: “Multi-floor okonomiyaki food court in downtown Hiroshima. 24 different stalls — each with their own style. Try one at Hassho (4th floor) or a seafood-loaded version with oysters. ~¥1,200.”, type: “food” },
+],
+},
+{
+date: “Apr 20 (Mon)”, day: 7, city: “Hiroshima → Kanazawa”, travel: true,
+theme: “Long Travel Day → Kanazawa Evening”,
+schedule: [
+{ time: “7:00–7:30”, activity: “☕ Checkout & breakfast”, detail: “Konbini breakfast. Check out of Sotetsu Fresa Inn.”, type: “food” },
+{ time: “8:00–12:00”, activity: “🚆 Hiroshima → Kyoto → Tsuruga → Kanazawa”, detail: “Sakura Shinkansen to Kyoto (~1h 50m) → Thunderbird Ltd Express to Tsuruga (~1h 20m) → Hokuriku Shinkansen to Kanazawa (~45m). All covered by JR Pass. ~4 hrs total with transfers. Bring snacks and entertainment.”, type: “transit” },
+{ time: “12:30–13:00”, activity: “🏨 Check in at Tokyu Stay Kanazawa”, detail: “Drop bags. Hotel is near Kanazawa Station.”, type: “explore” },
+{ time: “13:30–15:00”, activity: “🐟 Lunch: Omicho Market”, detail: “Kanazawa’s ‘Kitchen’ — a 300+ year old market. Incredible fresh seafood: try kaisendon (sashimi rice bowl) at one of the market stalls. Omicho Ichibazushi for conveyor belt sushi with Hokuriku fish. ~¥2,000.”, type: “food” },
+{ time: “15:00–16:30”, activity: “🌳 Kenroku-en Garden”, detail: “One of Japan’s ‘three great gardens.’ Meticulously landscaped ponds, bridges, plum trees. ¥320. Adjacent to Kanazawa Castle Park (free). Allow 1-1.5 hrs.”, type: “sight” },
+{ time: “16:30–17:30”, activity: “🏯 Kanazawa Castle Park”, detail: “Walk through the expansive castle grounds. Beautiful restored gates and turrets. Free entry to grounds (some buildings ¥320).”, type: “sight” },
+{ time: “18:00–19:00”, activity: “🏘️ Higashi Chaya District”, detail: “Beautifully preserved geisha district with wooden tea houses. Gold leaf is Kanazawa’s thing — try gold leaf ice cream (~¥900). Browse craft shops.”, type: “explore” },
+{ time: “19:30–21:00”, activity: “🍣 Dinner: Sushi at Morimori Sushi”, detail: “Conveyor belt sushi with premium Hokuriku seafood (nodoguro, white shrimp, crab). Incredible quality for the price. Near Kanazawa Station. ~¥2,500. Or splurge at Sushi Misaki.”, type: “food” },
+],
+},
+{
+date: “Apr 21 (Tue)”, day: 8, city: “Kanazawa”, travel: false,
+theme: “Kanazawa: Art, Samurai & Seafood”,
+schedule: [
+{ time: “8:00–9:00”, activity: “🍳 Breakfast: Omicho Market (round 2)”, detail: “Go back for a morning seafood bowl or grilled fish set. Market is liveliest in the morning.”, type: “food” },
+{ time: “9:30–11:30”, activity: “🎨 21st Century Museum of Contemporary Art”, detail: “Free zone has the famous ‘Swimming Pool’ installation by Leandro Erlich (look down through water at people below). Ticketed exhibits vary. ¥1,200. Very Instagram-worthy.”, type: “sight” },
+{ time: “11:30–12:30”, activity: “🏘️ Nagamachi Samurai District”, detail: “Preserved samurai residences with earthen walls and narrow canals. Visit the Nomura Samurai House (¥550) — stunning miniature garden voted top garden by a US journal.”, type: “sight” },
+{ time: “12:30–13:30”, activity: “🍜 Lunch: Menya Taiga”, detail: “Excellent miso ramen near the samurai district. Rich, bold broth. Or try Go Go Curry (Kanazawa’s famous curry chain — thick, dark Japanese curry over tonkatsu).”, type: “food” },
+{ time: “14:00–15:00”, activity: “🛍️ Kazuemachi & Nishi Chaya Districts”, detail: “Atmospheric districts along the Asano River. Less touristy than Higashi Chaya. Beautiful wooden architecture.”, type: “explore” },
+{ time: “15:30–16:30”, activity: “🎨 D.T. Suzuki Museum”, detail: “Minimalist museum dedicated to the Zen philosopher. Tranquil water mirror garden. ¥310. Architecturally stunning — perfect for contemplation.”, type: “sight” },
+{ time: “17:00–18:00”, activity: “🌊 Nearby walk or onsen”, detail: “Relax at a public bath or walk along the Saigawa River. Rest up before tomorrow’s early departure.”, type: “explore” },
+{ time: “18:30–20:00”, activity: “🍣 Dinner: Kanazawa-style sushi”, detail: “Last night in Kanazawa — go for premium sushi. Try Sushi Misaki or Otomezushi for Kanazawa’s famous pressed sushi alongside nigiri. Nodoguro (blackthroat seaperch) is the must-order. ~¥4,000-6,000.”, type: “food” },
+],
+},
+{
+date: “Apr 22 (Wed)”, day: 9, city: “Kanazawa → Nagano”, travel: true,
+theme: “Early Move + Temple Town Nagano”,
+schedule: [
+{ time: “5:30–6:00”, activity: “☕ Early checkout”, detail: “Konbini breakfast. Very early departure to maximize Nagano time.”, type: “food” },
+{ time: “6:15–7:20”, activity: “🚆 Hakutaka Shinkansen → Nagano”, detail: “Kanazawa Station → Nagano Station (~1 hr 5 min). Covered by JR Pass. Sleep on the train.”, type: “transit” },
+{ time: “7:30–8:00”, activity: “🏨 Drop bags at Hotel NewNagano NeXT”, detail: “Near Nagano Station. Coin lockers if check-in isn’t ready.”, type: “explore” },
+{ time: “8:30–10:00”, activity: “⛩️ Zenko-ji Temple”, detail: “Nagano’s premier attraction — 1,400-year-old temple. Walk down the atmospheric Nakamise shopping street to reach it. Don’t miss: the pitch-dark underground passage beneath the altar (touch the ‘key to paradise’). ¥600. 15-min walk from station.”, type: “sight” },
+{ time: “10:00–11:00”, activity: “🛍️ Nakamise-dori & temple grounds”, detail: “Traditional shops selling Shinshu soba, oyaki (stuffed dumplings), Buddhist goods. Try fresh oyaki from a street vendor (~¥250).”, type: “explore” },
+{ time: “11:30–12:30”, activity: “🍜 Lunch: Shinshu Soba”, detail: “Nagano is THE soba capital of Japan. Try hand-cut buckwheat soba at Soba-dokoro Fujiki or Sobazen. Cold zaru soba is the classic order. ~¥1,000.”, type: “food” },
+{ time: “13:00–16:30”, activity: “🐒 Jigokudani Snow Monkey Park (optional)”, detail: “Wild monkeys bathing in hot springs! Bus from Nagano Station to Kanbayashi Onsen (~40 min, ¥1,500 RT) then 30-min forest walk to park. ¥800 entry. NOTE: April monkeys may be less active than winter — still worth it if you want the experience. Return by 16:00.”, type: “sight” },
+{ time: “17:00–18:00”, activity: “🍎 Explore Nagano Station area”, detail: “Nagano is famous for apples, wasabi, and wine. Browse the MIDORI shopping complex attached to the station for local goods.”, type: “explore” },
+{ time: “18:30–20:00”, activity: “🍜 Dinner: Local specialties”, detail: “Try basashi (horse sashimi — a Nagano specialty if you’re adventurous), local Shinshu salmon, oyaki dumplings, or nozawana pickles. Or go for more soba at a different shop — Nagano’s soba is that good.”, type: “food” },
+],
+},
+{
+date: “Apr 23 (Thu)”, day: 10, city: “Nagano → Tokyo”, travel: true,
+theme: “Move to Tokyo + Shinjuku Evening”,
+schedule: [
+{ time: “8:00–8:30”, activity: “☕ Breakfast & checkout”, detail: “Quick breakfast at hotel or station bakery.”, type: “food” },
+{ time: “9:00–10:20”, activity: “🚆 Hakutaka/Kagayaki → Tokyo”, detail: “Nagano Station → Tokyo Station (~1h 20m). Covered by JR Pass. Last day of JR Pass coverage.”, type: “transit” },
+{ time: “10:30–11:30”, activity: “🚆 JR Yamanote Line → Shin-Okubo”, detail: “Tokyo Station to Shin-Okubo (~25 min). Check in at Galois Hotel Shinokubo. Drop bags.”, type: “transit” },
+{ time: “12:00–13:30”, activity: “🍜 Lunch: Fuunji Tsukemen (Shinjuku)”, detail: “One of Tokyo’s most famous tsukemen (dipping ramen) shops. Rich fish-pork broth, thick noodles. 5-min walk from Shinjuku Station south exit. Expect a 20-30 min queue. Worth it. ~¥1,100.”, type: “food” },
+{ time: “14:00–15:30”, activity: “⛩️ Meiji Shrine”, detail: “Serene Shinto shrine in a forest in the middle of Tokyo. Walk through the massive torii gate and gravel paths. Free. Adjacent to Yoyogi Park.”, type: “sight” },
+{ time: “15:30–16:30”, activity: “🛍️ Takeshita Street (Harajuku)”, detail: “Wild, colorful teen fashion street. Crepes, cotton candy, quirky shops. Even if it’s not your vibe, it’s a spectacle. 2-min walk from Meiji Shrine.”, type: “explore” },
+{ time: “17:00–18:00”, activity: “🛍️ Omotesando”, detail: “Tokyo’s Champs-Élysées. High-end architecture and flagship stores. Window shop or browse. Beautiful tree-lined boulevard.”, type: “explore” },
+{ time: “18:30–19:30”, activity: “🍣 Dinner: Sushi at Sushi no Midori (Shibuya)”, detail: “High-quality sushi at very reasonable prices. Always a line but moves fast. Shibuya Mark City branch. ~¥3,000 for a full set.”, type: “food” },
+{ time: “20:00–21:30”, activity: “🌃 Shibuya Crossing & Shibuya Sky”, detail: “See the world’s busiest intersection from above at Shibuya Sky observation deck (¥2,000, book online). Or just cross it and feel the energy.”, type: “explore” },
+],
+},
+{
+date: “Apr 24 (Fri)”, day: 11, city: “Tokyo”, travel: false,
+theme: “teamLab + East Tokyo Culture”,
+schedule: [
+{ time: “6:30–7:30”, activity: “🍳 Early breakfast near hotel”, detail: “Grab a quick konbini breakfast or find a morning set at a local kissaten.”, type: “food” },
+{ time: “8:00–10:30”, activity: “🎨 teamLab (scheduled)”, detail: “Your pre-booked slot. Immersive digital art experience. Wear dark clothing for best photo contrast. Allow 2-2.5 hours inside.”, type: “sight” },
+{ time: “11:00–12:00”, activity: “⛩️ Senso-ji Temple (Asakusa)”, detail: “Tokyo’s oldest temple. Approach through the iconic Kaminarimon (Thunder Gate) and Nakamise shopping street. Free. Great for photos and snacks. This is our furthest northeast point — we’ll work south from here all afternoon.”, type: “sight” },
+{ time: “12:00–13:00”, activity: “🍜 Lunch: Asakusa area”, detail: “Try Sometaro for DIY okonomiyaki in a traditional tatami room. Or Ramen Yoroiya for a rich bowl near Senso-ji. Or get tempura at Daikokuya (historic spot, expect a line).”, type: “food” },
+{ time: “13:30–14:30”, activity: “🛍️ Kappabashi Kitchen Street”, detail: “Walk south from Asakusa (~10 min). Tokyo’s kitchen district — blocks of shops selling restaurant-quality knives, plastic food samples, ceramics, chopsticks. Great for unique souvenirs.”, type: “explore” },
+{ time: “15:00–16:00”, activity: “🌿 Ueno Park & area”, detail: “Continue south to Ueno (~10 min walk from Kappabashi). Large park with museums, Shinobazu Pond, and shrines. Visit the Tokyo National Museum (¥1,000) for deep cultural immersion, or Ameyoko market street for street food and bargain shopping.”, type: “explore” },
+{ time: “16:15–17:30”, activity: “🎮 Akihabara”, detail: “One stop south of Ueno on the JR Yamanote Line. Electric Town — anime, manga, retro gaming, electronics. Browse multi-floor arcades, figure shops, and Super Potato for retro games. Even non-gamers find it fascinating.”, type: “explore” },
+{ time: “18:00–19:30”, activity: “🍣 Dinner: Ginza sushi or standing bar”, detail: “Continue southwest from Akihabara to Ginza (~10 min by subway). Try a standing sushi bar like Uogashi Nihon-Ichi for fast, high-quality nigiri, or sit down for an omakase in one of Ginza’s excellent mid-range sushi spots.”, type: “food” },
+{ time: “20:00–21:30”, activity: “🌃 Shinjuku night walk”, detail: “Head back west to home base (~20 min by subway). Walk through Kabukicho (Tokyo’s biggest entertainment district) and peek at Golden Gai’s tiny alley architecture. Stroll Omoide Yokocho (Memory Lane) for the atmosphere and yakitori smoke. Great street photography. Short walk from your hotel.”, type: “explore” },
+],
+},
+{
+date: “Apr 25 (Sat)”, day: 12, city: “Tokyo → Osaka”, travel: true,
+theme: “Morning Tokyo → Bullet Train → Osaka Blitz”,
+schedule: [
+{ time: “7:00–8:00”, activity: “🐟 Toyosu Market outer area”, detail: “Outer market restaurants serve incredible breakfast sushi and seafood. Early morning is best. No lottery needed for outer area.”, type: “food” },
+{ time: “8:30–9:30”, activity: “🌿 Tsukiji Outer Market”, detail: “The old market’s outer area is still thriving. Street food paradise: tamago on a stick, fresh uni, grilled scallops, oysters. Walk and graze.”, type: “explore” },
+{ time: “10:00–10:30”, activity: “🛍️ Tokyo Station shopping”, detail: “Quick stop: Character Street for anime goods, Gransta for premium bento boxes and souvenirs. Pick up omiyage (gifts) here.”, type: “explore” },
+{ time: “11:00–13:30”, activity: “🚆 Nozomi Shinkansen → Shin-Osaka”, detail: “Tokyo Station → Shin-Osaka (~2h 30m). ¥13,870 unreserved. Book via SmartEX app. Grab an ekiben for the ride — your last shinkansen meal.”, type: “transit” },
+{ time: “14:00–14:30”, activity: “🏨 Check in KOKO Hotel Namba”, detail: “Subway Midosuji Line from Shin-Osaka to Namba (~15 min, ¥280). Drop bags quickly.”, type: “explore” },
+{ time: “14:30–16:00”, activity: “🏯 Osaka Castle”, detail: “Iconic castle surrounded by a moat and park. ¥600 to enter the museum inside (great views from top floor). Take subway to Tanimachi 4-chome. Beautiful grounds.”, type: “sight” },
+{ time: “16:30–17:30”, activity: “🛍️ Kuromon Market”, detail: “‘Osaka’s Kitchen’ — blocks of seafood stalls. Try: otoro sashimi on a stick, grilled king crab legs, fresh sea urchin, and tamagoyaki. Your big food crawl.”, type: “food” },
+{ time: “17:30–18:30”, activity: “🛍️ Shinsaibashi Shopping Arcade”, detail: “Long covered shopping street connecting Namba to Shinsaibashi. Mix of international brands and local shops. Amerikamura (American Village) side streets for vintage fashion. Last souvenir shopping.”, type: “explore” },
+{ time: “18:30–19:30”, activity: “🍣 Dinner: Dotonbori food crawl”, detail: “Osaka is Japan’s food capital. Walk the neon-lit Dotonbori strip: takoyaki at Wanaka, kushikatsu at Daruma, gyoza at Chao Chao. The Glico Running Man sign is here — get the photo.”, type: “food” },
+{ time: “19:30–21:00”, activity: “🌃 Shinsekai + Dotonbori evening”, detail: “Take the subway to Shinsekai — retro neon neighborhood around Tsutenkaku Tower. Kushikatsu street food everywhere. Then walk back through Dotonbori for the full neon canal experience at night. Browse Don Quijote for last-minute quirky Japanese goods. Pack tonight — early morning tomorrow.”, type: “explore” },
+],
+},
+{
+date: “Apr 26 (Sun)”, day: 13, city: “Osaka → KIX ✈️”, travel: true,
+theme: “Departure Day”,
+schedule: [
+{ time: “6:30–7:00”, activity: “☕ Quick breakfast & checkout”, detail: “Grab onigiri and a drink from the konbini. Final checkout from KOKO Hotel Namba. Make sure bags are packed and you have your passport ready.”, type: “food” },
+{ time: “7:15–8:00”, activity: “🚆 Nankai Rapi:t → Kansai Airport”, detail: “Namba Station → KIX via Nankai Rapi:t limited express (~38 min, ¥1,450). The retro-futuristic blue train is a fun last ride. Alternatively, the Nankai Airport Express is cheaper (~45 min, ¥930). Trains run every 30 min.”, type: “transit” },
+{ time: “8:00–10:30”, activity: “✈️ Kansai International Airport”, detail: “Arrive ~2.5 hrs before your 10:30 AM flight. Check in, clear security, and browse the duty-free shops for last-minute KitKat flavors, Japanese snacks, and skincare. Terminal food court has decent ramen and sushi if you want one final meal.”, type: “transit” },
+],
+},
+];
 
-    const typeColors = {
-      transit: { bg: "rgba(100,149,237,0.15)", border: "rgba(100,149,237,0.3)" },
-      sight: { bg: "rgba(233,69,96,0.12)", border: "rgba(233,69,96,0.25)" },
-      food: { bg: "rgba(245,166,35,0.12)", border: "rgba(245,166,35,0.25)" },
-      explore: { bg: "rgba(78,204,163,0.1)", border: "rgba(78,204,163,0.2)" },
-    };
+const typeColors = {
+transit: { bg: “rgba(100,149,237,0.15)”, border: “rgba(100,149,237,0.3)” },
+sight: { bg: “rgba(233,69,96,0.12)”, border: “rgba(233,69,96,0.25)” },
+food: { bg: “rgba(245,166,35,0.12)”, border: “rgba(245,166,35,0.25)” },
+explore: { bg: “rgba(78,204,163,0.1)”, border: “rgba(78,204,163,0.2)” },
+};
 
-    function App() {
-      const [selectedDay, setSelectedDay] = useState(0);
-      const [expandedItems, setExpandedItems] = useState({});
-      const toggleItem = (idx) =>
-        setExpandedItems((prev) => ({ ...prev, [idx]: !prev[idx] }));
+function App() {
+const [selectedDay, setSelectedDay] = useState(0);
+const [expandedItems, setExpandedItems] = useState({});
+const toggleItem = (idx) => setExpandedItems(prev => ({…prev, [idx]: !prev[idx]}));
+const day = days[selectedDay];
 
-      const day = days[selectedDay];
+return h(‘div’, {style:{fontFamily:”‘Segoe UI’,system-ui,sans-serif”,background:”#0f0f1a”,color:”#e0e0e0”,minHeight:“100vh”,maxWidth:600,margin:“0 auto”}},
+h(‘style’, null, `.day-pill{padding:6px 10px;border-radius:20px;font-size:11px;cursor:pointer;white-space:nowrap;transition:all .2s;border:1px solid transparent;font-weight:500;flex-shrink:0}.day-pill:hover{border-color:rgba(233,69,96,.4)}.day-pill.active{background:rgba(233,69,96,.25);border-color:#e94560;color:#fff}.day-pill.inactive{background:rgba(255,255,255,.05);color:#8892b0}.sched-item{cursor:pointer;transition:all .2s;border-radius:10px;padding:12px;margin-bottom:8px}.sched-item:hover{filter:brightness(1.1)}::-webkit-scrollbar{height:4px}::-webkit-scrollbar-thumb{background:rgba(233,69,96,.4);border-radius:4px}`),
+// Header
+h(‘div’, {style:{padding:“20px 16px 12px”,textAlign:“center”}},
+h(‘div’, {style:{fontSize:12,letterSpacing:3,color:”#e94560”,fontWeight:600,marginBottom:6}}, “🇯🇵 13-DAY JAPAN ITINERARY”),
+h(‘h1’, {style:{fontFamily:”‘Zen Kaku Gothic New’,sans-serif”,fontSize:22,fontWeight:700,color:”#fff”,marginBottom:4}}, “April 14–26, 2026”),
+h(‘p’, {style:{fontSize:12,color:”#8892b0”}}, “Packed days · Iconic sights · Best food · For two”)
+),
+// Day selector
+h(‘div’, {style:{overflowX:“auto”,padding:“8px 16px 16px”,display:“flex”,gap:6}},
+days.map((d,i) => h(‘div’, {key:i, className:`day-pill ${selectedDay===i?"active":"inactive"}`, onClick:()=>{setSelectedDay(i);setExpandedItems({})}},
+h(‘div’, {style:{fontSize:10,opacity:.7}}, d.date.split(” “)[0]+” “+(d.date.split(” “)[1]||””).replace(/[()]/g,””)),
+h(‘div’, {style:{fontSize:11,fontWeight:600,marginTop:2}}, d.city.length>14?d.city.split(” “)[0]:d.city)
+))
+),
+// Day content
+h(‘div’, {style:{padding:“0 16px 24px”}},
+h(‘div’, {style:{marginBottom:16}},
+h(‘div’, {style:{display:“flex”,alignItems:“center”,gap:8,marginBottom:4}},
+h(‘span’, {style:{fontSize:20,fontWeight:700,color:”#fff”}}, “Day “+day.day),
+day.travel && h(‘span’, {style:{fontSize:10,padding:“2px 8px”,borderRadius:10,background:“rgba(100,149,237,.2)”,color:”#6495ED”,fontWeight:600}}, “TRAVEL DAY”)
+),
+h(‘div’, {style:{fontSize:15,fontWeight:600,color:”#f5a623”,marginBottom:2}}, day.theme),
+h(‘div’, {style:{fontSize:12,color:”#8892b0”}}, day.city+” · “+day.schedule.length+” activities”)
+),
+day.schedule.map((item,idx) => {
+const tc = typeColors[item.type]||typeColors.explore;
+const isOpen = expandedItems[idx];
+return h(‘div’, {key:idx, className:“sched-item”, onClick:()=>toggleItem(idx), style:{background:tc.bg,border:“1px solid “+tc.border}},
+h(‘div’, {style:{display:“flex”,justifyContent:“space-between”,alignItems:“flex-start”}},
+h(‘div’, {style:{flex:1}},
+h(‘div’, {style:{fontSize:10,color:”#8892b0”,marginBottom:3,fontWeight:600}}, item.time),
+h(‘div’, {style:{fontSize:14,fontWeight:600,color:”#fff”}}, item.activity)
+),
+h(‘span’, {style:{fontSize:14,opacity:.5,transform:isOpen?“rotate(180deg)”:“rotate(0)”,transition:“transform .2s”}}, “▾”)
+),
+isOpen && h(‘div’, {style:{marginTop:8,fontSize:12,color:”#b0b8c8”,lineHeight:1.7,borderTop:“1px solid “+tc.border,paddingTop:8}}, item.detail)
+);
+})
+),
+h(‘div’, {style:{padding:“12px 16px 24px”,textAlign:“center”,fontSize:11,color:”#5a6174”}}, “Tap any activity to expand details · Prices approximate · April 2026”)
+);
+}
 
-      return h(
-        "div",
-        {
-          style: {
-            fontFamily: "'Segoe UI', system-ui, sans-serif",
-            background: "#0f0f1a",
-            color: "#e0e0e0",
-            minHeight: "100vh",
-            maxWidth: 600,
-            margin: "0 auto",
-          },
-        },
-        h(
-          "style",
-          null,
-          `
-          .day-pill {
-            padding: 6px 10px;
-            border-radius: 20px;
-            font-size: 11px;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: all .2s;
-            border: 1px solid transparent;
-            font-weight: 500;
-            flex-shrink: 0;
-          }
-          .day-pill:hover {
-            border-color: rgba(233,69,96,.4);
-          }
-          .day-pill.active {
-            background: rgba(233,69,96,.25);
-            border-color: #e94560;
-            color: #fff;
-          }
-          .day-pill.inactive {
-            background: rgba(255,255,255,.05);
-            color: #8892b0;
-          }
-          .sched-item {
-            cursor: pointer;
-            transition: all .2s;
-            border-radius: 10px;
-            padding: 12px;
-            margin-bottom: 8px;
-          }
-          .sched-item:hover {
-            filter: brightness(1.1);
-          }
-          ::-webkit-scrollbar {
-            height: 4px;
-          }
-          ::-webkit-scrollbar-thumb {
-            background: rgba(233,69,96,.4);
-            border-radius: 4px;
-          }
-        `
-        ),
+ReactDOM.createRoot(document.getElementById(‘root’)).render(h(App));
+} catch(e) {
+document.getElementById(‘root’).innerHTML = ’<div style="color:red;padding:20px;">Error: ’ + e.message + ‘</div>’;
+}
+</script>
 
-        h(
-          "div",
-          { style: { padding: "20px 16px 12px", textAlign: "center" } },
-          h(
-            "div",
-            {
-              style: {
-                fontSize: 12,
-                letterSpacing: 3,
-                color: "#e94560",
-                fontWeight: 600,
-                marginBottom: 6,
-              },
-            },
-            "🇯🇵 13-DAY JAPAN ITINERARY"
-          ),
-          h(
-            "h1",
-            {
-              style: {
-                fontFamily: "'Zen Kaku Gothic New', sans-serif",
-                fontSize: 22,
-                fontWeight: 700,
-                color: "#fff",
-                marginBottom: 4,
-              },
-            },
-            "April 14–26, 2026"
-          ),
-          h(
-            "p",
-            { style: { fontSize: 12, color: "#8892b0" } },
-            "Packed days · Iconic sights · Best food · For two"
-          )
-        ),
-
-        h(
-          "div",
-          {
-            style: {
-              overflowX: "auto",
-              padding: "8px 16px 16px",
-              display: "flex",
-              gap: 6,
-            },
-          },
-          days.map((d, i) =>
-            h(
-              "div",
-              {
-                key: i,
-                className: `day-pill ${selectedDay === i ? "active" : "inactive"}`,
-                onClick: () => {
-                  setSelectedDay(i);
-                  setExpandedItems({});
-                },
-              },
-              h(
-                "div",
-                { style: { fontSize: 10, opacity: 0.7 } },
-                d.date.split(" ")[0] +
-                  " " +
-                  (d.date.split(" ")[1] || "").replace(/[()]/g, "")
-              ),
-              h(
-                "div",
-                { style: { fontSize: 11, fontWeight: 600, marginTop: 2 } },
-                d.city.length > 14 ? d.city.split(" ")[0] : d.city
-              )
-            )
-          )
-        ),
-
-        h(
-          "div",
-          { style: { padding: "0 16px 24px" } },
-          h(
-            "div",
-            { style: { marginBottom: 16 } },
-            h(
-              "div",
-              {
-                style: {
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 8,
-                  marginBottom: 4,
-                },
-              },
-              h(
-                "span",
-                { style: { fontSize: 20, fontWeight: 700, color: "#fff" } },
-                "Day " + day.day
-              ),
-              day.travel &&
-                h(
-                  "span",
-                  {
-                    style: {
-                      fontSize: 10,
-                      padding: "2px 8px",
-                      borderRadius: 10,
-                      background: "rgba(100,149,237,.2)",
-                      color: "#6495ED",
-                      fontWeight: 600,
-                    },
-                  },
-                  "TRAVEL DAY"
-                )
-            ),
-            h(
-              "div",
-              {
-                style: {
-                  fontSize: 15,
-                  fontWeight: 600,
-                  color: "#f5a623",
-                  marginBottom: 2,
-                },
-              },
-              day.theme
-            ),
-            h(
-              "div",
-              { style: { fontSize: 12, color: "#8892b0" } },
-              day.city + " · " + day.schedule.length + " activities"
-            )
-          ),
-
-          day.schedule.map((item, idx) => {
-            const tc = typeColors[item.type] || typeColors.explore;
-            const isOpen = expandedItems[idx];
-
-            return h(
-              "div",
-              {
-                key: idx,
-                className: "sched-item",
-                onClick: () => toggleItem(idx),
-                style: {
-                  background: tc.bg,
-                  border: "1px solid " + tc.border,
-                },
-              },
-              h(
-                "div",
-                {
-                  style: {
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "flex-start",
-                  },
-                },
-                h(
-                  "div",
-                  { style: { flex: 1 } },
-                  h(
-                    "div",
-                    {
-                      style: {
-                        fontSize: 10,
-                        color: "#8892b0",
-                        marginBottom: 3,
-                        fontWeight: 600,
-                      },
-                    },
-                    item.time
-                  ),
-                  h(
-                    "div",
-                    { style: { fontSize: 14, fontWeight: 600, color: "#fff" } },
-                    item.activity
-                  )
-                ),
-                h(
-                  "span",
-                  {
-                    style: {
-                      fontSize: 14,
-                      opacity: 0.5,
-                      transform: isOpen ? "rotate(180deg)" : "rotate(0)",
-                      transition: "transform .2s",
-                    },
-                  },
-                  "▾"
-                )
-              ),
-              isOpen &&
-                h(
-                  "div",
-                  {
-                    style: {
-                      marginTop: 8,
-                      fontSize: 12,
-                      color: "#b0b8c8",
-                      lineHeight: 1.7,
-                      borderTop: "1px solid " + tc.border,
-                      paddingTop: 8,
-                    },
-                  },
-                  item.detail
-                )
-            );
-          })
-        ),
-
-        h(
-          "div",
-          {
-            style: {
-              padding: "12px 16px 24px",
-              textAlign: "center",
-              fontSize: 11,
-              color: "#5a6174",
-            },
-          },
-          "Tap any activity to expand details · Prices approximate · April 2026"
-        )
-      );
-    }
-
-    ReactDOM.render(h(App), document.getElementById("root"));
-  </script>
 </body>
 </html>
